@@ -2,6 +2,9 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var csso = require('gulp-csso');
 var plumber = require('gulp-plumber');
+var webserver = require('gulp-webserver');
+
+
 // uncss
 // recess
 
@@ -17,4 +20,11 @@ gulp.task('watch', function() {
   gulp.watch('css/*.scss', ['sass']);
 });
 
-gulp.task('default', ['sass', 'watch']);
+gulp.task('webserver', function() {
+  gulp.src('.')
+    .pipe(webserver({
+      livereload: true
+    }));
+});
+
+gulp.task('default', ['sass', 'webserver', 'watch']);

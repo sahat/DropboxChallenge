@@ -12,6 +12,7 @@
     "gulp": "^3.8.6",
     "gulp-csso": "^0.2.9",
     "gulp-plumber": "^0.6.3",
-    "gulp-sass": "^0.7.2"
+    "gulp-sass": "^0.7.2",
+    "gulp-webserver": "^0.4.0"
   }
 }
