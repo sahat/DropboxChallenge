@@ -51,7 +51,7 @@
 
         // Remove people with missing photos
         _.each(connections, function(person, index) {
-          if (!person.pictureUrl) {
+          if (person && !person.pictureUrl) {
             connections.splice(index, 1);
           }
         });
