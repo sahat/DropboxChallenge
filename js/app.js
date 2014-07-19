@@ -76,8 +76,8 @@
               return false;
             }
 
-            // Check if pictureUrl's object is equal to name's object
-
+            open.push(flipper);
+            flipper.classList.add('open');
 
             if (open.length === 2) {
               var second = open.pop();
@@ -91,12 +91,13 @@
                 second.querySelector('.back').style.backgroundColor = '#007ee5';
                 open = [];
               } else {
-                first.classList.remove('open');
-                second.classList.remove('open');
+                setTimeout(function() {
+                  first.classList.remove('open');
+                  second.classList.remove('open');
+                }, 1000);
               }
             }
-            open.push(flipper);
-            flipper.classList.add('open');
+
           });
         });
 
