@@ -1,6 +1,5 @@
 @import 'overrides';
 @import '../bower_components/animate-css/animate.css';
-@import '../bower_components/flippant.js/flippant.css';
 @import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
 
 html {
@@ -67,11 +66,68 @@ html {
   }
 }
 
-#grid {
-  background: #f3f5f8;
-}
-
 .panel {
   box-shadow: 0px 3px 0px 0px #f0f2f4;
   transition: all 0.4s ease-in-out;
+}
+
+.flip-container {
+
+  perspective: 1000;
+  margin-bottom: 10px;
+}
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+  transform: rotateY(180deg);
+  background-color: #fff;
+}
+
+.flip-container, .front, .back {
+  border-radius: 3px;
+
+  box-shadow: 0px 3px 0px 0px #f0f2f4;
+  width: 170px;
+  height: 100px;
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  @extend .lead;
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: table;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  p {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  background: #fff;
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+  color: #fff;
+  background-color: #7b8994;
+// TODO: success background-color: #007ee5;
 }

@@ -50,11 +50,10 @@
         grid.innerHTML = _.template(gridTpl, { connections: data.values });
 
         var panels = document.getElementsByClassName('panel');
+        var spans = document.getElementsByClassName('col-xs-3');
 
-        _.each(panels, function(panel) {
-          panel.addEventListener('click', function(event) {
-            console.log('clicked on', event.target);
-          });
+        _.each(spans, function(panel) {
+
         });
       });
   }
