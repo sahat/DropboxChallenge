@@ -42,7 +42,8 @@
   function getConnections() {
     IN.API.Connections('me')
       .result(function(data) {
-        console.log(data);
+        centered.classList.remove('centered');
+
         var source = document.querySelector("#entry-template").innerHTML;
         grid.innerHTML = _.template(source, {
           name: 'pebbles',
