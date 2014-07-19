@@ -57,6 +57,11 @@
 
         _.each(flippers, function(flipper) {
           flipper.addEventListener('click', function(event) {
+
+            if (_.contains(open, flipper)) {
+              return false;
+            }
+
             if (open.length >= 2) {
               while (open.length) {
                 var openFlipper = open.pop();
