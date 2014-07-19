@@ -36,7 +36,7 @@
     <% _.each(connections, function(person) { %>
       <div class="col-xs-2">
         <div class="flip-container">
-          <div class="flipper">
+          <div data-id="${person.id}" class="flipper">
                 <div class="front"></div>
                 <div class="back"><p>${person.firstName}</p></div>
           </div>
@@ -46,7 +46,7 @@
     <% _.each(connections, function(person) { %>
       <div class="col-xs-2">
         <div class="flip-container">
-          <div class="flipper">
+          <div data-id="${person.id}" class="flipper">
                 <div class="front"></div>
                 <div class="back"><img src="${person.pictureUrl}"></div>
           </div>

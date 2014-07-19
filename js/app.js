@@ -83,7 +83,9 @@
               var second = open.pop();
               var first = open.pop();
 
-              if (first.id === second.id) {
+              console.log(first);
+              console.log(second);
+              if (first.dataset.id === second.dataset.id) {
                 console.log('IT IS A MATCH');
                 open = [];
               } else {
