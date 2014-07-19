@@ -47,8 +47,17 @@
     IN.API.Connections('me')
       .result(function(data) {
 
-        var connections = data.values.slice(0,15);
+        var connections = data.values;
 
+        // Remove people with missing photos
+        _.each(connections, function(person, index) {
+          if (!person.pictureUrl) {
+            connections.splice(index, 1);
+          }
+        });
+
+        connections = _.shuffle(connections);
+        connections = connections.slice(0, 15);
 
         centered.classList.remove('centered');
 
