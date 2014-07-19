@@ -51,9 +51,16 @@
 
         var panels = document.getElementsByClassName('panel');
         var spans = document.getElementsByClassName('col-xs-3');
+        var flippers = document.getElementsByClassName('flipper');
 
-        _.each(spans, function(panel) {
-
+        _.each(flippers, function(flipper) {
+          flipper.addEventListener('click', function(event) {
+            if (flipper.classList.contains('open')) {
+              flipper.classList.remove('open');
+            } else {
+              flipper.classList.add('open');
+            }
+          });
         });
       });
   }
