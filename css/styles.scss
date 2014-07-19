@@ -124,6 +124,12 @@ html {
   -moz-user-select: none;
   -ms-user-select: none;
 
+  img {
+    border-radius: 3px;
+    height: 100%;
+    width: 100%;
+  }
+
   p {
     display: table-cell;
     vertical-align: middle;
