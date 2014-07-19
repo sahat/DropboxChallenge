@@ -87,6 +87,8 @@
               console.log(second);
               if (first.dataset.id === second.dataset.id) {
                 console.log('IT IS A MATCH');
+                first.querySelector('.back').style.backgroundColor = '#007ee5';
+                second.querySelector('.back').style.backgroundColor = '#007ee5';
                 open = [];
               } else {
                 first.classList.remove('open');
