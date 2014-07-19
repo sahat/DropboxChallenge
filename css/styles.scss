@@ -1,6 +1,6 @@
-$font-family-base: 'Varela Round', sans-serif;
-
-@import 'bootstrap/bootstrap';
+@import 'overrides';
+@import 'animate';
+@import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
 
 html {
   -webkit-font-smoothing: antialiased;
