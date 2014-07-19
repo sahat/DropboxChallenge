@@ -1,11 +1,16 @@
-@import url(http://fonts.googleapis.com/css?family=Valera+Round:800,400,300,600,700);
-
 $font-family-base: 'Varela Round', sans-serif;
 
 @import 'bootstrap/bootstrap';
 
 html {
   -webkit-font-smoothing: antialiased;
+}
+
+.home {
+  margin: auto;
+  position: absolute;
+  height: 294px;
+  top: 0; left: 0; bottom: 0; right: 0;
 }
 
 .title {
@@ -16,7 +21,6 @@ html {
   }
 
   h1 {
-    padding-top: 50px;
     font-family: 'Abril Fatface', cursive;
     font-size: 38px;
 
@@ -39,7 +43,7 @@ html {
 }
 
 .btn-linkedin {
-  background: rgba(61, 201, 179, 1);
+  background: #3dc9b3;
   padding: 20px 40px;
   border-radius: 5px;
   color: #fff;
