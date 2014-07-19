@@ -8,20 +8,22 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="home container text-center">
-    <div class="title">
-      <h1>
-        <img src="img/Dropbox.svg" alt="Dropbox Logo">
-        Dropbox <span>Challenge</span>
-      </h1>
-      <p>A solitaire version of the classic Concentration card game</p>
+  <div class="container text-center">
+    <div class="centered">
+      <div class="title animated fadeIn">
+        <h1>
+          <img src="img/Dropbox.svg" alt="Dropbox Logo">
+          Dropbox <span>Challenge</span>
+        </h1>
+        <p>A solitaire version of the classic Concentration card game</p>
+      </div>
+
+      <button class="btn btn-linkedin animated">Sign in with LinkedIn</button>
+
+      <div id="grid"></div>
+
+      <p class="copyright animated">Created by <a href="http://sahatyalkabov.com">Sahat Yalkabov</a></p>
     </div>
-
-    <button class="btn btn-linkedin">Sign in with LinkedIn</button>
-
-    <div id="grid"></div>
-
-    <p>Created by <a href="http://sahatyalkabov.com">Sahat Yalkabov</a></p>
   </div>
 
   <script id="entry-template" type="text/template">
@@ -30,6 +32,7 @@
 
   <script src="http://platform.linkedin.com/in.js?async=true"></script>
   <script src="bower_components/lodash/dist/lodash.js"></script>
+  <script src="bower_components/move.js/move.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
