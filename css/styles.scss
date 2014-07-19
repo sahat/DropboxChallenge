@@ -1,0 +1,54 @@
+@import url(http://fonts.googleapis.com/css?family=Valera+Round:800,400,300,600,700);
+
+$font-family-base: 'Varela Round', sans-serif;
+
+@import 'bootstrap/bootstrap';
+
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+.title {
+  p {
+    color: #8c9398;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+  }
+
+  h1 {
+    padding-top: 50px;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 38px;
+
+    span {
+      color: #a1a9b0
+    }
+
+    img {
+      height: 38px;
+    }
+  }
+}
+
+.btn {
+  transition: all 0.5s;
+}
+
+.btn-linkedin {
+  background: rgba(61, 201, 179, 1);
+  padding: 20px 40px;
+  border-radius: 5px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  box-shadow: 0px 3px 0px 0px #309383;
+  margin: 60px 0 40px;
+  font-weight: bold;
+
+  &:hover,
+  &:focus {
+    background: rgba(61, 201, 179, 0.6);
+    color: #fff;
+  }
+}
