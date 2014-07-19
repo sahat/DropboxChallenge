@@ -23,23 +23,24 @@
 
 
   // Event Listeners
-  loginButton.addEventListener('click', function(e) {
-    console.log('click');
+  loginButton.addEventListener('click', function(event) {
+    IN.UI.Authorize().place();
+    IN.Event.on(IN, 'auth', getConnections);
 
     centered.style.marginTop = '0';
     centered.style.top = '0';
     loginButton.style.display = 'none';
     copyright.style.display = 'none';
-
   });
 
-  function onLinkedInLoad() {
+  function getConnections() {
+    IN.API.Connections('me')
+      .result(function(data) {
+        console.log(data);
+      });
 
+    var source = document.querySelector("#entry-template").innerHTML;
+    document.querySelector('#main').innerHTML = _.template(source, { name: 'pebbles' });
   }
-})();
 
-//  IN.UI.Authorize().place();
-//  IN.Event.on(IN, 'auth', function() {
-//    var source = document.querySelector("#entry-template").innerHTML;
-//    document.querySelector('#main').innerHTML = _.template(source, { name: 'pebbles' });
-//  });
+})();
