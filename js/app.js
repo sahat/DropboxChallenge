@@ -15,6 +15,7 @@
   });
 
   // DOM Elements
+  var body = document.querySelector('body');
   var grid = document.querySelector('#grid');
   var title = document.querySelector('.title');
   var centered = document.querySelector('.centered');
@@ -33,6 +34,7 @@
   function userAuthorized() {
     getConnections();
 
+    body.style.backgroundColor = '#f3f5f8';
     centered.style.marginTop = '0';
     centered.style.top = '0';
     loginButton.style.display = 'none';
@@ -44,14 +46,17 @@
       .result(function(data) {
         centered.classList.remove('centered');
 
-        var source = document.querySelector("#entry-template").innerHTML;
-        grid.innerHTML = _.template(source, {
-          name: 'pebbles',
-          connections: data.values
+        var gridTpl = document.querySelector("#entry-template").innerHTML;
+        grid.innerHTML = _.template(gridTpl, { connections: data.values });
+
+        var panels = document.getElementsByClassName('panel');
+
+        _.each(panels, function(panel) {
+          panel.addEventListener('click', function(event) {
+            console.log('clicked on', event.target);
+          });
         });
-
       });
-
   }
 
 })();
