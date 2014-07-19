@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "dependencies": {
     "lodash": "~2.4.1",
-    "bootstrap-sass-official": "~3.2.0"
+    "bootstrap-sass-official": "~3.2.0",
+    "velocity": "~0.8.0",
+    "move.js": "visionmedia/move.js#~0.3.3",
+    "flippant.js": "mintchaos/flippant.js",
+    "animate-css": "~3.2.0"
   }
 }

@@ -1,5 +1,6 @@
 @import 'overrides';
-@import 'animate';
+@import '../bower_components/animate-css/animate.css';
+@import '../bower_components/flippant.js/flippant.css';
 @import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
 
 html {
@@ -23,14 +24,14 @@ html {
 
   h1 {
     font-family: 'Abril Fatface', cursive;
-    font-size: 38px;
+    font-size: 40px;
 
     span {
       color: #a1a9b0
     }
 
     img {
-      height: 38px;
+      height: 40px;
     }
   }
 }
@@ -72,5 +73,5 @@ html {
 
 .panel {
   box-shadow: 0px 3px 0px 0px #f0f2f4;
-  transition: all 500ms ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
