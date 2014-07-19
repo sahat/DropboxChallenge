@@ -27,12 +27,19 @@
   </div>
 
   <script id="entry-template" type="text/template">
-    template content ${name}
+    <% _.each(connections, function(connection) { %>
+      <div class="col-xs-3">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            ${connection.firstName}
+          </div>
+        </div>
+      </div>
+    <% }); %>
   </script>
 
   <script src="http://platform.linkedin.com/in.js?async=true"></script>
   <script src="bower_components/lodash/dist/lodash.js"></script>
-  <script src="bower_components/move.js/move.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

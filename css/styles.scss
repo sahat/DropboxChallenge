@@ -5,10 +5,6 @@
 html {
   -webkit-font-smoothing: antialiased;
 }
-html {
-  position: relative;
-  min-height: 100%;
-}
 
 .centered {
   position: absolute;
@@ -68,4 +64,13 @@ html {
     background: rgba(61, 201, 179, 0.6);
     color: #fff;
   }
+}
+
+#grid {
+  background: #f3f5f8;
+}
+
+.panel {
+  box-shadow: 0px 3px 0px 0px #f0f2f4;
+  transition: all 500ms ease-in-out;
 }
