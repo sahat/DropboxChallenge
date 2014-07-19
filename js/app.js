@@ -18,6 +18,7 @@
   var body = document.querySelector('body');
   var grid = document.querySelector('#grid');
   var title = document.querySelector('.title');
+  var score = document.querySelector('.score');
   var centered = document.querySelector('.centered');
   var loginButton = document.querySelector('.btn-linkedin');
   var copyright = document.querySelector('.copyright');
@@ -39,6 +40,7 @@
     centered.style.top = '0';
     loginButton.style.display = 'none';
     copyright.style.display = 'none';
+    score.style.display = 'block';
   }
 
   function getConnections() {
