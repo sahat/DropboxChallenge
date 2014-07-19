@@ -47,10 +47,8 @@
         centered.classList.remove('centered');
 
         var gridTpl = document.querySelector("#entry-template").innerHTML;
-        grid.innerHTML = _.template(gridTpl, { connections: data.values });
+        grid.innerHTML = _.template(gridTpl, { connections: data.values.slice(0,30) });
 
-        var panels = document.getElementsByClassName('panel');
-        var spans = document.getElementsByClassName('col-xs-3');
         var flippers = document.getElementsByClassName('flipper');
 
         var open = [];
