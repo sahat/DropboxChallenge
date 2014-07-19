@@ -33,14 +33,24 @@
   </div>
 
   <script id="entry-template" type="text/template">
-    <% _.each(connections, function(connection) { %>
+    <% _.each(connections, function(person) { %>
       <div class="col-xs-2">
         <div class="flip-container">
           <div class="flipper">
                 <div class="front"></div>
-                <div class="back"><p>${connection.firstName}</p></div>
+                <div class="back"><p>${person.firstName}</p></div>
           </div>
+        </div>
+      </div>
+    <% }); %>
+    <% _.each(connections, function(person) { %>
+      <div class="col-xs-2">
+        <div class="flip-container">
+          <div class="flipper">
+                <div class="front"></div>
+                <div class="back"><img src="${person.pictureUrl}"></div>
           </div>
+        </div>
       </div>
     <% }); %>
   </script>
