@@ -47,16 +47,13 @@
     IN.API.Connections('me')
       .result(function(data) {
 
-        var people = {};
-        _.each(data.values, function(person) {
-          people[person]
-        });
+        var connections = data.values.slice(0,15);
 
 
         centered.classList.remove('centered');
 
         var gridTpl = document.querySelector("#entry-template").innerHTML;
-        grid.innerHTML = _.template(gridTpl, { connections: data.values.slice(0,30) });
+        grid.innerHTML = _.template(gridTpl, { connections: connections });
 
         var flippers = document.getElementsByClassName('flipper');
 
@@ -67,25 +64,24 @@
             if (_.contains(open, flipper)) {
               return false;
             }
-
             if (open.length >= 2) {
               while (open.length) {
                 var openFlipper = open.pop();
                 openFlipper.classList.remove('open');
               }
             }
-
             open.push(flipper);
             flipper.classList.add('open');
-
-//
-//            if (flipper.classList.contains('open')) {
-//              flipper.classList.remove('open');
-//            } else {
-//              flipper.classList.add('open');
-//            }
           });
         });
+
+
+        var divs = Array.prototype.slice.call(grid.children);
+
+        while (divs.length) {
+          grid.appendChild(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+        }
+
       });
   }
 
