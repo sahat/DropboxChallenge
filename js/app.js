@@ -53,13 +53,26 @@
         var spans = document.getElementsByClassName('col-xs-3');
         var flippers = document.getElementsByClassName('flipper');
 
+        var open = [];
+
         _.each(flippers, function(flipper) {
           flipper.addEventListener('click', function(event) {
-            if (flipper.classList.contains('open')) {
-              flipper.classList.remove('open');
-            } else {
-              flipper.classList.add('open');
+            if (open.length >= 2) {
+              while (open.length) {
+                var openFlipper = open.pop();
+                openFlipper.classList.remove('open');
+              }
             }
+
+            open.push(flipper);
+            flipper.classList.add('open');
+
+//
+//            if (flipper.classList.contains('open')) {
+//              flipper.classList.remove('open');
+//            } else {
+//              flipper.classList.add('open');
+//            }
           });
         });
       });
