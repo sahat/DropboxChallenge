@@ -44,6 +44,13 @@
   function getConnections() {
     IN.API.Connections('me')
       .result(function(data) {
+
+        var people = {};
+        _.each(data.values, function(person) {
+          people[person]
+        });
+
+
         centered.classList.remove('centered');
 
         var gridTpl = document.querySelector("#entry-template").innerHTML;
@@ -55,7 +62,6 @@
 
         _.each(flippers, function(flipper) {
           flipper.addEventListener('click', function(event) {
-
             if (_.contains(open, flipper)) {
               return false;
             }

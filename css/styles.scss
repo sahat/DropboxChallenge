@@ -81,10 +81,17 @@ html {
   transform: rotateY(180deg);
   background-color: #fff;
 }
+.flip-container:hover .front {
+  background-color: darken(#fff, 2.75%);
+}
+
+.flip-container:hover .back {
+  background-color: darken(#7b8994, 2.75%);
+}
 
 .flip-container, .front, .back {
+  transition: background-color 0.2s;
   border-radius: 3px;
-
   box-shadow: 0px 3px 0px 0px #f0f2f4;
   width: 100px;
   height: 100px;
