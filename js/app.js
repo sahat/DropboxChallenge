@@ -70,13 +70,25 @@
 
         _.each(flippers, function(flipper) {
           flipper.addEventListener('click', function(event) {
+
+            // To avoid opening the same tile twice
             if (_.contains(open, flipper)) {
               return false;
             }
-            if (open.length >= 2) {
-              while (open.length) {
-                var openFlipper = open.pop();
-                openFlipper.classList.remove('open');
+
+            // Check if pictureUrl's object is equal to name's object
+
+
+            if (open.length === 2) {
+              var second = open.pop();
+              var first = open.pop();
+
+              if (first.id === second.id) {
+                console.log('IT IS A MATCH');
+                open = [];
+              } else {
+                first.classList.remove('open');
+                second.classList.remove('open');
               }
             }
             open.push(flipper);
