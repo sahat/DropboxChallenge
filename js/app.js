@@ -132,7 +132,9 @@
                 second.classList.add('complete');
                 open = [];
               } else {
-                decreaseScore();
+                if (scoreCount > 0) {
+                  decreaseScore();
+                }
                 setTimeout(function() {
                   first.classList.remove('open');
                   second.classList.remove('open');
