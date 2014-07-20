@@ -1,9 +1,3 @@
-// TODO: code climate + tests
-// TODO: Linkedin client auth
-// TODO: Linkedin API call to /connections
-// TODO: Reset game
-// TODO: Score and Achievements
-
 (function() {
 
   // Global data
@@ -21,6 +15,7 @@
   var title = document.querySelector('.title');
   var score = document.querySelector('.score');
   var centered = document.querySelector('.centered');
+  var container = document.querySelector('.container');
   var loginButton = document.querySelector('.btn-linkedin');
   var copyright = document.querySelector('.copyright');
 
@@ -37,7 +32,6 @@
     centered.style.marginTop = '0';
     centered.style.top = '0';
     loginButton.style.display = 'none';
-    copyright.style.display = 'none';
     score.style.display = 'block';
   }
 
@@ -53,12 +47,13 @@
         });
 
         connections = _.shuffle(connections);
-        connections = connections.slice(0, 6);
+        connections = connections.slice(0, 12);
 
         centered.classList.remove('centered');
 
         var gridTpl = document.querySelector("#entry-template").innerHTML;
         grid.innerHTML = _.template(gridTpl, { connections: connections });
+        container.appendChild(copyright);
 
         var flippers = document.getElementsByClassName('flipper');
 
