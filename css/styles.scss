@@ -148,7 +148,6 @@ html {
   transform: rotateY(180deg);
   color: #fff;
   background-color: #7b8994;
-// TODO: success background-color: #007ee5; animation FADE FADE
 }
 
 .heart {
@@ -163,5 +162,10 @@ html {
 }
 
 .score {
-  display: none;
+//  display: none;
+}
+
+.score-trail {
+  display: inline-block;
+  color: #007ee5;
 }

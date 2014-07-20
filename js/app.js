@@ -23,13 +23,10 @@
   var loginButton = document.querySelector('.btn-linkedin');
   var copyright = document.querySelector('.copyright');
 
-
   // Event Listeners
   loginButton.addEventListener('click', function(event) {
     IN.UI.Authorize().place();
     IN.Event.on(IN, 'auth', userAuthorized);
-
-
   });
 
   function userAuthorized() {
@@ -67,6 +64,7 @@
         var flippers = document.getElementsByClassName('flipper');
 
         var open = [];
+        var scoreCount = 0;
 
         _.each(flippers, function(flipper) {
           flipper.addEventListener('click', function(event) {
@@ -86,11 +84,25 @@
             open.push(flipper);
             flipper.classList.add('open');
 
+            function updateScore() {
+              var scorePlaceholder = document.querySelector('.score span');
+              var scoreTrail = document.querySelector('.score-trail');
+              scoreCount =+ 5;
+              scorePlaceholder.innerHTML = scoreCount;
+              scoreTrail.classList.remove('fadeOutTop');
+              scoreTrail.classList.add('fadeInUp');
+              setTimeout(function() {
+                scoreTrail.classList.remove('fadeInUp');
+                scoreTrail.classList.add('fadeOutTop');
+              }, 500);
+            }
+
             if (open.length === 2) {
               var second = open.pop();
               var first = open.pop();
 
               if (first.dataset.id === second.dataset.id) {
+                updateScore();
                 first.querySelector('.back').style.backgroundColor = '#007ee5';
                 second.querySelector('.back').style.backgroundColor = '#007ee5';
                 first.classList.add('complete');
