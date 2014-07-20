@@ -68,7 +68,7 @@
           flipper.addEventListener('click', function(event) {
 
             // To avoid opening the same tile twice
-            if (_.contains(open, flipper)) {
+            if (_.contains(open, flipper) || flipper.classList.contains('complete')) {
               return false;
             }
 
