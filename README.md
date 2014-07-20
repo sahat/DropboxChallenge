@@ -1,9 +1,9 @@
-# Dropbox Challenge [![Code Climate](http://img.shields.io/codeclimate/github/sahat/DropboxChallenge.svg)](https://codeclimate.com/github/sahat/DropboxChallenge) [![Build Status](https://travis-ci.org/sahat/DropboxChallenge.svg?branch=master)](https://travis-ci.org/sahat/DropboxChallenge)
+# Dropbox Challenge [![Code Climate](http://img.shields.io/codeclimate/github/sahat/DropboxChallenge.svg)](https://codeclimate.com/github/sahat/DropboxChallenge)
 
 This a quick over-the-weekend project as part of a take-home interview problem
-from **Dropbox**. Kudos to them for making this such an exciting project to work
-on. I haven't had this much fun coding since working on the 
-[New Eden Faces](https://github.com/sahat/newedenfaces) project in 2013.
+from **Dropbox**. Kudos to them for making such an exciting interview project. 
+I haven't had this much fun coding since I was working on the 
+[New Eden Faces](https://github.com/sahat/newedenfaces) project.
 
 ![](https://lh6.googleusercontent.com/-GmpyXsgs-Vg/U8tAeuQI-bI/AAAAAAAAEYY/8DqRKypA7Xg/w849-h680-no/dropbox-challenge-screenshot.png)
 
@@ -19,8 +19,8 @@ npm install
 gulp server
 ```
 
-**Note:** Starting a local web server is necessary in order to avoid security 
-policy errors from *LinkedIn JavScript SDK*.
+**Note:** Local web server is necessary in order to avoid security policy errors 
+with *LinkedIn JavScript SDK*.
 
 ## License
 
