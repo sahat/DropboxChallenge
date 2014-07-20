@@ -4,6 +4,6 @@ describe('a test suite', function() {
   });
 
   it('should fail', function() {
-    expect(false).toBe(true);
+    expect(true).toBe(true);
   });
 });
