@@ -9,56 +9,56 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <a href="https://github.com/sahat/DropboxChallenge"><img style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px;" src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-graphite@2x.png" alt="Fork me on GitHub"></a>
+<a href="https://github.com/sahat/DropboxChallenge"><img style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px;" src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-graphite@2x.png" alt="Fork me on GitHub"></a>
 
-  <div class="container text-center">
-    <div class="centered">
-      <div class="title animated fadeIn">
-        <h1>
-          <img src="img/Dropbox.svg" alt="Dropbox Logo">
-          Dropbox <span>Challenge</span>
-        </h1>
-        <p>A solitaire version of the classic Concentration card game</p>
-      </div>
-
-      <p class="score">
-        <strong>Score:</strong> <span>0</span>
-        <span class="score-trail animated"></span>
-      </p>
-
-      <button class="btn btn-linkedin animated">Sign in with LinkedIn</button>
-
-      <p class="copyright animated">Created with <img class="heart" src="img/hearts-64.png"> by <a href="http://sahatyalkabov.com">Sahat Yalkabov</a></p>
+<div class="container text-center">
+  <div class="centered">
+    <div class="title animated fadeIn">
+      <h1>
+        <img src="img/Dropbox.svg" alt="Dropbox Logo">
+        Dropbox <span>Challenge</span>
+      </h1>
+      <p>A solitaire version of the classic Concentration card game</p>
     </div>
 
-    <div id="grid"></div>
+    <p class="score">
+      <strong>Score:</strong> <span>0</span>
+      <span class="score-trail animated"></span>
+    </p>
+
+    <button class="btn btn-linkedin animated">Sign in with LinkedIn</button>
+
+    <p class="copyright animated">Created with <img class="heart" src="img/hearts-64.png"> by <a href="http://sahatyalkabov.com">Sahat Yalkabov</a></p>
   </div>
 
-  <script id="grid-template" type="text/template">
-    <% _.each(connections, function(person) { %>
-      <div class="col-xs-2">
-        <div class="flip-container">
-          <div data-id="${person.id}" class="flipper">
-                <div class="front"></div>
-                <div class="back"><p>${person.firstName}</p></div>
-          </div>
-        </div>
-      </div>
-    <% }); %>
-    <% _.each(connections, function(person) { %>
-      <div class="col-xs-2">
-        <div class="flip-container">
-          <div data-id="${person.id}" class="flipper">
-                <div class="front"></div>
-                <div class="back"><img src="${person.pictureUrl}"></div>
-          </div>
-        </div>
-      </div>
-    <% }); %>
-  </script>
+  <div id="grid"></div>
+</div>
 
-  <script src="http://platform.linkedin.com/in.js?async=true"></script>
-  <script src="bower_components/lodash/dist/lodash.js"></script>
-  <script src="js/app.js"></script>
+<script id="grid-template" type="text/template">
+  <% _.each(connections, function(person) { %>
+    <div class="col-xs-2">
+      <div class="flip-container">
+        <div data-id="${person.id}" class="flipper">
+              <div class="front"></div>
+              <div class="back"><p>${person.firstName}</p></div>
+        </div>
+      </div>
+    </div>
+  <% }); %>
+  <% _.each(connections, function(person) { %>
+    <div class="col-xs-2">
+      <div class="flip-container">
+        <div data-id="${person.id}" class="flipper">
+              <div class="front"></div>
+              <div class="back"><img src="${person.pictureUrl}"></div>
+        </div>
+      </div>
+    </div>
+  <% }); %>
+</script>
+
+<script src="http://platform.linkedin.com/in.js?async=true"></script>
+<script src="bower_components/lodash/dist/lodash.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
