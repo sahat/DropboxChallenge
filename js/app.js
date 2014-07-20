@@ -86,19 +86,38 @@
             open.push(flipper);
             flipper.classList.add('open');
 
-            function updateScore() {
+            function increaseScore() {
               var scorePlaceholder = document.querySelector('.score span');
               var scoreTrail = document.querySelector('.score-trail');
               scoreCount = scoreCount + 5;
               scorePlaceholder.innerHTML = scoreCount;
 
+              scoreTrail.innerHTML = '+5';
+              scoreTrail.style.color = '#007ee5';
               scoreTrail.style.display = 'inline-block';
               scoreTrail.classList.remove('fadeOut');
               scoreTrail.classList.add('fadeInUp');
               setTimeout(function() {
                 scoreTrail.classList.remove('fadeInUp');
                 scoreTrail.classList.add('fadeOut');
-              }, 900);
+              }, 1000);
+            }
+
+            function decreaseScore() {
+              var scorePlaceholder = document.querySelector('.score span');
+              var scoreTrail = document.querySelector('.score-trail');
+              scoreCount = scoreCount  - 1;
+              scorePlaceholder.innerHTML = scoreCount;
+
+              scoreTrail.innerHTML = '-1';
+              scoreTrail.style.color = '#d80017';
+              scoreTrail.style.display = 'inline-block';
+              scoreTrail.classList.remove('fadeOut');
+              scoreTrail.classList.add('fadeInUp');
+              setTimeout(function() {
+                scoreTrail.classList.remove('fadeInUp');
+                scoreTrail.classList.add('fadeOut');
+              }, 1000);
             }
 
             if (open.length === 2) {
@@ -106,13 +125,14 @@
               var first = open.pop();
 
               if (first.dataset.id === second.dataset.id) {
-                updateScore();
+                increaseScore();
                 first.querySelector('.back').style.backgroundColor = '#007ee5';
                 second.querySelector('.back').style.backgroundColor = '#007ee5';
                 first.classList.add('complete');
                 second.classList.add('complete');
                 open = [];
               } else {
+                decreaseScore();
                 setTimeout(function() {
                   first.classList.remove('open');
                   second.classList.remove('open');
