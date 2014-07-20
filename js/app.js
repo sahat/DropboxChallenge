@@ -89,7 +89,7 @@
             function updateScore() {
               var scorePlaceholder = document.querySelector('.score span');
               var scoreTrail = document.querySelector('.score-trail');
-              scoreCount =+ 5;
+              scoreCount = scoreCount + 5;
               scorePlaceholder.innerHTML = scoreCount;
 
               scoreTrail.style.display = 'inline-block';
