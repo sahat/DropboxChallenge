@@ -76,6 +76,13 @@
               return false;
             }
 
+            var openCount = document.getElementsByClassName('open').length;
+            var completeCount = document.getElementsByClassName('complete').length;
+
+            if (openCount > completeCount + 1) {
+              return false;
+            }
+
             open.push(flipper);
             flipper.classList.add('open');
 
@@ -83,12 +90,11 @@
               var second = open.pop();
               var first = open.pop();
 
-              console.log(first);
-              console.log(second);
               if (first.dataset.id === second.dataset.id) {
-                console.log('IT IS A MATCH');
                 first.querySelector('.back').style.backgroundColor = '#007ee5';
                 second.querySelector('.back').style.backgroundColor = '#007ee5';
+                first.classList.add('complete');
+                second.classList.add('complete');
                 open = [];
               } else {
                 setTimeout(function() {
@@ -101,9 +107,7 @@
           });
         });
 
-
         var divs = Array.prototype.slice.call(grid.children);
-
         while (divs.length) {
           grid.appendChild(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
         }
