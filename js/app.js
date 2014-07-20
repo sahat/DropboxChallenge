@@ -1,8 +1,6 @@
 // TODO: code climate + tests
 // TODO: Linkedin client auth
 // TODO: Linkedin API call to /connections
-// TODO: When connections are loaded, replace DOM with grid
-// TODO: Add logout button
 // TODO: Reset game
 // TODO: Score and Achievements
 
@@ -50,10 +48,8 @@
         var connections = data.values;
 
         // Remove people with missing photos
-        _.each(connections, function(person, index) {
-          if (person && !person.pictureUrl) {
-            connections.splice(index, 1);
-          }
+        connections = _.filter(connections, function(person) {
+          return person.pictureUrl;
         });
 
         connections = _.shuffle(connections);
@@ -106,7 +102,7 @@
             function decreaseScore() {
               var scorePlaceholder = document.querySelector('.score span');
               var scoreTrail = document.querySelector('.score-trail');
-              scoreCount = scoreCount  - 1;
+              scoreCount = scoreCount - 1;
               scorePlaceholder.innerHTML = scoreCount;
 
               scoreTrail.innerHTML = '-1';
