@@ -53,7 +53,7 @@
         });
 
         connections = _.shuffle(connections);
-        connections = connections.slice(0, 12);
+        connections = connections.slice(0, 6);
 
         centered.classList.remove('centered');
 
@@ -70,17 +70,6 @@
             // To avoid opening the same tile twice
             if (_.contains(open, flipper) || flipper.classList.contains('complete')) {
               return false;
-            }
-
-            var openCount = document.getElementsByClassName('open').length;
-            var completeCount = document.getElementsByClassName('complete').length;
-
-            if (openCount > completeCount + 1) {
-              return false;
-            }
-
-            if (completeCount === flippers.length) {
-              alert('Game Over. Your score is ' + scoreCount);
             }
 
             open.push(flipper);
@@ -142,6 +131,11 @@
               }
             }
 
+            var completeCount = document.getElementsByClassName('complete').length;
+
+            if (completeCount === flippers.length) {
+              alert('Game Over. Your score is ' + scoreCount);
+            }
           });
         });
 
