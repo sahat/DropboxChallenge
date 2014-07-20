@@ -1,13 +1,12 @@
 {
   "name": "DropboxChallenge",
   "version": "0.0.0",
-  "description": "LinkedIn Game",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./node_modules/gulp/bin/gulp.js server",
+    "test": "mocha"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Sahat Yalkabov",
+  "license": "MIT",
   "devDependencies": {
     "gulp": "^3.8.6",
     "gulp-csso": "^0.2.9",
