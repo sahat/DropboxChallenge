@@ -79,6 +79,10 @@
               return false;
             }
 
+            if (completeCount === flippers.length) {
+              alert('Game Over. Your score is ' + scoreCount);
+            }
+
             open.push(flipper);
             flipper.classList.add('open');
 
