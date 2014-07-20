@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "start": "node ./node_modules/gulp/bin/gulp.js server",
-    "test": "mocha"
+    "test": "node ./node_modules/karma/bin/karma start --single-run --browsers PhantomJS"
   },
   "author": "Sahat Yalkabov",
   "license": "MIT",
@@ -12,6 +12,9 @@
     "gulp-csso": "^0.2.9",
     "gulp-plumber": "^0.6.3",
     "gulp-sass": "^0.7.2",
-    "gulp-webserver": "^0.4.0"
+    "gulp-webserver": "^0.4.0",
+    "karma": "^0.12.17",
+    "karma-jasmine": "^0.1.5",
+    "karma-phantomjs-launcher": "^0.1.4"
   }
 }
