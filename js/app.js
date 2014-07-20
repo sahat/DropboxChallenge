@@ -89,10 +89,10 @@
             function increaseScore() {
               var scorePlaceholder = document.querySelector('.score span');
               var scoreTrail = document.querySelector('.score-trail');
-              scoreCount = scoreCount + 5;
+              scoreCount = scoreCount + 10;
               scorePlaceholder.innerHTML = scoreCount;
 
-              scoreTrail.innerHTML = '+5';
+              scoreTrail.innerHTML = '+10';
               scoreTrail.style.color = '#007ee5';
               scoreTrail.style.display = 'inline-block';
               scoreTrail.classList.remove('fadeOut');
