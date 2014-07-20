@@ -10,7 +10,7 @@
   });
 
   // Initial DOM Elements.
-  var grid = document.querySelector('#grid');
+  var grid = document.querySelector('.grid');
   var body = document.querySelector('body');
   var title = document.querySelector('.title');
   var score = document.querySelector('.score');

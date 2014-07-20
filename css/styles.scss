@@ -155,10 +155,10 @@ html {
   height: 24px;
 }
 
-#grid {
+.grid {
+  display: inline-block;
   width: 660px;
   text-align: center;
-  display: inline-block;
 }
 
 .score {
