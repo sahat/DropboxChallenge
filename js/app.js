@@ -8,6 +8,9 @@
 
 (function() {
 
+  // Global data
+  var scoreCount = 0;
+
   // Initialize LinkedIn SDK
   IN.init({
     api_key: '75z17ew9n8c2pm',
@@ -54,7 +57,7 @@
         });
 
         connections = _.shuffle(connections);
-        connections = connections.slice(0, 15);
+        connections = connections.slice(0, 12);
 
         centered.classList.remove('centered');
 
@@ -64,7 +67,6 @@
         var flippers = document.getElementsByClassName('flipper');
 
         var open = [];
-        var scoreCount = 0;
 
         _.each(flippers, function(flipper) {
           flipper.addEventListener('click', function(event) {
@@ -89,12 +91,14 @@
               var scoreTrail = document.querySelector('.score-trail');
               scoreCount =+ 5;
               scorePlaceholder.innerHTML = scoreCount;
-              scoreTrail.classList.remove('fadeOutTop');
+
+              scoreTrail.style.display = 'inline-block';
+              scoreTrail.classList.remove('fadeOut');
               scoreTrail.classList.add('fadeInUp');
               setTimeout(function() {
                 scoreTrail.classList.remove('fadeInUp');
-                scoreTrail.classList.add('fadeOutTop');
-              }, 500);
+                scoreTrail.classList.add('fadeOut');
+              }, 900);
             }
 
             if (open.length === 2) {
